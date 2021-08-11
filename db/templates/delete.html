@@ -1,0 +1,15 @@
+{% for obj in object %}
+    <form method="POST">
+        {% csrf_token %}
+        <tr> 
+         <td>{{ obj.first_name }}</td>
+         <td>{{ obj.last_name }}</td>
+         <td>{{ obj.email }}</td>
+         <td>{{ obj.phone_number }} {% csrf_token %} <input href="" id="delete_button" type="button" onclick="deleteRow(this)" value="Delete" /></td>
+    </tr>
+        
+    </form>
+{% endfor %}
+
+{% comment %} <p>{{ forloop.counter }}: {{ obj.name }}<input type="submit" name="delete_items" value="{{ obj.pk }}"></p>
+        <p>{{ obj.comment }}</p> {% endcomment %}
