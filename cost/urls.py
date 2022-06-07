@@ -20,8 +20,8 @@ from dbc.views import save_to_db,  delete,simple_upload,export,edit
 
 
 urlpatterns = [
-    path ('form/', save_to_db, name="form"),
-    path ('form/display/', simple_upload),
+    path ('', save_to_db, name="form"),
+    path ('display/', simple_upload),
     path('delete/<int:id>/', delete),
     path('edit/<int:id>/', edit),
     path('export/',export),

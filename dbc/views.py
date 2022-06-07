@@ -76,7 +76,7 @@ def simple_upload(request):
         new_persons = request.FILES['myfile']
 
         imported_data = dataset.load(new_persons.read(),format='xlsx')
-        #print(imported_data)
+        print(imported_data)
         for data in imported_data:
         	value = InsertToDb(
         		data[0],
