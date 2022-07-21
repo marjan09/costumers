@@ -35,7 +35,7 @@ def save_to_db(request):
 def delete(request, id):
     form_entry = InsertToDb.objects.get(id=id)
     form_entry.delete()
-    return redirect("/form/display")
+    return redirect("/display")
 
 # def edit(request, id):
 #     form = InsertToDb.objects.get(id=id)
@@ -50,7 +50,7 @@ def edit(request, id=None):
     some_form = PersonData(request.POST, instance=form)
     if some_form.is_valid():
         some_form.save()
-        return redirect("/form/display/")
+        return redirect("/display")
     return render(request, 'edit.html', {'form':form})
    
 
@@ -86,7 +86,7 @@ def simple_upload(request):
                 data[4]
         		)
         	value.save()
-        return redirect("/form/display") 
+        return redirect("/display") 
 
     return render(request, 'show_in_table.html', {'objs':objs})
 
